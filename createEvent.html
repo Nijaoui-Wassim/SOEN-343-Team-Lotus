@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="./css/createEvent.css" rel="stylesheet" />
+        <title>Register</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="description" content="Organize your events the modern way">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/Lato.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <script src="./js/create.js"></script>
+    </head>
+    <body>
+        <div class="v22_40">
+            <div class="v22_43">
+                <div class="v22_44"></div>
+                <!-- <span class="v22_45">©  Lotus Team</span> -->
+            </div>
+            <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+                <div class="container"><a class="navbar-brand" href="index.html" style="height: 41px;color: var(--bs-btn-hover-bg);font-weight: bold;font-family: Roboto;font-size: 24px;">LOTUS</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <a class="btn btn-primary ms-auto" role="button" href="#" style="text-align: right;color: var(--bs-btn-active-color);--bs-primary: #f1f4f7;--bs-primary-rgb: 241,244,247;background: transparent;border-color: transparent;">Request Center</a>
+                        <a class="btn btn-primary ms-auto" role="button" href="BrowseEvents.html" style="text-align: right;background: transparent;--bs-primary: #000000;--bs-primary-rgb: 0,0,0;color: rgb(4,4,4);border-color: transparent;">Events</a>
+                        <a class="btn btn-primary ms-auto" role="button" href="#" style="text-align: right;background: transparent;--bs-primary: #000000;--bs-primary-rgb: 0,0,0;color: rgb(4,4,4);border-color: transparent;">Social Networking</a>
+                        <a class="btn btn-primary ms-auto" role="button" href="newsletter.html" style="text-align: right;background: transparent;--bs-primary: #000000;--bs-primary-rgb: 0,0,0;color: rgb(4,4,4);border-color: transparent;">Announcements Newsletter</a>
+                        <a class="btn btn-primary ms-auto" role="button" href="login.html">Sign In</a>
+                    
+                    </div>
+                </div>
+            </nav>
+
+            <div class="content d-flex p-2 d-flex justify-content-center">
+
+
+
+                <section class="h-100 h-custom" style="background-color: #f1f1f144;">
+                    <div class="container py-5 h-100">
+                      <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-lg-8 col-xl-6">
+                          <div class="card rounded-3">
+                            <img src="https://img.freepik.com/free-vector/happy-friends-drinking-wine-beer-together-flat-illustration_74855-16152.jpg?w=2000"
+                              class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                              alt="Sample photo">
+                            <div class="card-body p-4 p-md-5">
+                              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Creating an Event</h3>
+                  
+                              <form class="px-md-2">
+                  
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="name" class="form-control" />
+                                    <label class="form-label" for="name">Name <span class="red">*</span></label>
+                                  </div>
+
+
+                                  <div class="form-outline mb-4">
+                                    <input type="text" id="description" class="form-control" />
+                                    <label class="form-label" for="description">Description <span class="red">*</span></label>
+                                  </div>
+                  
+                                <div class="row">
+                                  <div class="col-md-6 mb-4">
+                  
+                                    <!-- <div class="form-outline datepicker">
+                                      <input type="text" class="form-control" id="exampleDatepicker1" />
+                                      <label for="exampleDatepicker1" class="form-label">Select a date</label>
+
+                                      <div class="input-group date" data-provide="datepicker">
+
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                    </div> -->
+                                    <div class="form-outline datepicker">
+                                    <label for="meeting-time">Choose a time for your Event: <span class="red">*</span></label>
+
+                                    <input type="datetime-local" id="meeting-time"
+                                           name="meeting-time" value="2022-12-01T19:30"
+                                           min="2022-12-02T00:00" max="2023-12-01T00:00">
+                                        </div>
+                                  </div>
+                                  <div class="col-md-6 mb-4">
+                  
+                                    <select class="select" id="category">
+                                      <option value="Other">Category <span class="red">*</span></option>
+                                      <option value="Sports">Sports</option>
+                                      <option value="Art">Art</option>
+                                      <option value="Occasional">Occasional</option>
+                                      <option value="Concert">Concert</option>
+                                      <option value="Other">Other</option>
+                                    </select>
+                  
+                                  </div>
+                                </div>
+                  
+                                <div class="mb-4">
+                  
+                                  <select class="select" id="duration">
+                                    <option value="All day">Duration <span class="red">*</span></option>
+                                    <option value="All day">All day</option>
+                                    <option value="Evening">Evening</option>
+                                    <option value="Morning">Morning</option>
+                                    
+                                  </select>
+                  
+                                </div>
+                  
+                                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                  <div class="col-md-6">
+                  
+                                    <div class="form-outline">
+                                      <input type="text" id="eventid" class="form-control" />
+                                      <label class="form-label" for="eventid">Event ID</label>
+                                    </div>
+                  
+                                  </div>
+                                </div>
+
+                                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                <form action="/action_page.php">
+                                    <input type="file" id="myFile" name="filename">
+                                    
+                                  </form>
+                                </div>
+                  
+                                <button id="btn-design" type="submit" class="btn btn-success btn-lg mb-1 white" onclick=Submitted()>Create</button>
+                  
+                              </form>
+                  
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+
+                  
+
+
+
+
+            </div>
+    </div>
+    </body>
+    </html>

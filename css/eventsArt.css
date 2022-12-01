@@ -47,3 +47,8 @@
     background-color: #ddd;
     border-radius: 5px;
   }
+
+  .toRight{
+      margin-left: 300px;
+      min-width: 150px;
+  }
