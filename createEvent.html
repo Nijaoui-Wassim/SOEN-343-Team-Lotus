@@ -3,7 +3,7 @@
     <head>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
         <link href="./css/createEvent.css" rel="stylesheet" />
-        <title>Register</title>
+        <title>Create Event | LOTUS</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <meta name="description" content="Organize your events the modern way">
@@ -51,7 +51,7 @@
                               <form class="px-md-2">
                   
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="name" class="form-control" required />
+                                    <input type="text" id="name" class="form-control" />
                                     <label class="form-label" for="name">Name <span class="red">*</span></label>
                                   </div>
 
@@ -80,13 +80,13 @@
 
                                     <input type="datetime-local" id="meeting-time"
                                            name="meeting-time" value="2022-12-01T19:30"
-                                           min="2022-12-02T00:00" max="2023-12-01T00:00">
+                                           min="2022-12-01T00:00" max="2023-12-01T00:00">
                                         </div>
                                   </div>
                                   <div class="col-md-6 mb-4">
-                  
+                                    <label>Category: <span class="red">*</span> </label>
                                     <select class="select" id="category">
-                                      <option value="Other">Category <span class="red">*</span></option>
+                                      <option value="Default">Category</option>
                                       <option value="Sports">Sports</option>
                                       <option value="Art">Art</option>
                                       <option value="Occasional">Occasional</option>
@@ -98,9 +98,10 @@
                                 </div>
                   
                                 <div class="mb-4">
-                  
+                                  <label>Duration: <span class="red">*</span> </label>
                                   <select class="select" id="duration">
-                                    <option value="All day">Duration <span class="red">*</span></option>
+                                    
+                                    <option value="Default">Duration</option>
                                     <option value="All day">All day</option>
                                     <option value="Evening">Evening</option>
                                     <option value="Morning">Morning</option>
@@ -127,7 +128,7 @@
                                   </form>
                                 </div>
                   
-                                <button id="btn-design" type="submit" class="btn btn-success btn-lg mb-1 white" onclick=Submitted()>Create</button>
+                                <button id="btn-design" type="submit" class="btn btn-success btn-lg mb-1 white" onclick=ValidateEventDetails()>Create</button>
                   
                               </form>
                   
