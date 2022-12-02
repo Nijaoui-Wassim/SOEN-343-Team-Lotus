@@ -31,7 +31,38 @@ function addEntry(element, newelement) {
 };
 
 
-function Submitted() {
+function ValidateEventDetails() {
+    console.log("Validating event details.")
+
+    let validated = false;
+
+    var name = document.getElementById("name").value;
+    var description = document.getElementById("description").value;
+    var category = document.getElementById("category").value;
+    var duration = document.getElementById("duration").value;
+
+    if (name && description && (category != "Default") && (duration != "Default")) {
+        validated = true;
+    }
+
+    if (validated == true) {
+        CreateEvent();
+    } else {
+        DisplayValidationError();
+    }
+    
+}
+
+
+function DisplayValidationError() {
+    console.log("Displaying validation error.")
+    alert("Please fill out the required fields.");
+}
+
+
+function CreateEvent() {
+    console.log("Creating event.");
+
     console.log("Values Submitted are: "); 
     var name = document.getElementById("name").value;
     var description = document.getElementById("description").value;
@@ -41,24 +72,17 @@ function Submitted() {
     var eventid = document.getElementById("eventid").value;
     var img = document.getElementById("myFile").value;
     
-    console.log("Name: " + name);
-    console.log("Description: " + description);
-    console.log("Date and Time: " + datetime);
-    console.log("Category: " + category);
-    console.log("Duration: " + duration);
-    console.log("Event ID: " + eventid);
-    console.log("Image: " + img);
+    // console.log("Name: " + name);
+    // console.log("Description: " + description);
+    // console.log("Date and Time: " + datetime);
+    // console.log("Category: " + category);
+    // console.log("Duration: " + duration);
+    // console.log("Event ID: " + eventid);
+    // console.log("Image: " + img);
     
     alert("Event Submitted!");
     // Saving all values to local storage and append them for future usage
 
-    // localStorage.setItem('Name', name);
-    // localStorage.setItem('Description', description);
-    // localStorage.setItem('Date and Time', datetime);
-    // localStorage.setItem('Category', category);
-    // localStorage.setItem('Duration', duration);
-    // localStorage.setItem('Event ID', eventid);
-    // localStorage.setItem('Image', img);
     addEntry('Names', name);
     addEntry('Descriptions', description);
     addEntry('Date and Times', datetime);
@@ -68,27 +92,24 @@ function Submitted() {
     addEntry('Images', img);
     
     // display all values in local storage
-    console.log("Names "+localStorage.getItem('Names'));
-    console.log("Descriptions "+localStorage.getItem('Descriptions'));
-    console.log("Date and Times "+localStorage.getItem('Date and Times'));
-    console.log("Categories "+localStorage.getItem('Categories'));
-    console.log("Durations "+localStorage.getItem('Durations'));
-    console.log("Event IDs "+localStorage.getItem('Event IDs'));
-    console.log("Images "+localStorage.getItem('Images'));
-
+    // console.log("Names "+localStorage.getItem('Names'));
+    // console.log("Descriptions "+localStorage.getItem('Descriptions'));
+    // console.log("Date and Times "+localStorage.getItem('Date and Times'));
+    // console.log("Categories "+localStorage.getItem('Categories'));
+    // console.log("Durations "+localStorage.getItem('Durations'));
+    // console.log("Event IDs "+localStorage.getItem('Event IDs'));
+    // console.log("Images "+localStorage.getItem('Images'));
 
     let numEvents = localStorage.getItem("numEvents");
 
-    if (numEvents == null) 
+    if (numEvents == null) {
         numEvents = 0;
+    }
     
     numEvents = Number(numEvents);
-    console.log(numEvents);
+    // console.log(numEvents);
 
     localStorage.setItem("numEvents", numEvents + 1);
-
-
-
 
     window.location.href = "BrowseEvents.html";
 }
@@ -101,76 +122,6 @@ function clearStorage() {
 }
 
 
-function CreateEvent() {
-    /*
-    // console.log("Create Event");
-    // window.location.href = "create.html";
-    const event = document.createElement("div");
-    const div1 = document.createElement("div");
-    const div2 = document.createElement("div");
-    const div3 = document.createElement("div");
-    const div4 = document.createElement("div");
-    const div5 = document.createElement("div");
-    const p = document.createElement("p");
-    const a = document.createElement("a");
-    h4 = document.createElement("h4");
-    h6_1 = document.createElement("h6");
-    h6_2 = document.createElement("h6");
-
-
-    // Adding classes to the divs and other elements
-    event.className = "col Event-holder";
-    div1.className = "img-holder";
-    div2.className = "text-holder";
-    div3.className = "col";
-    div4.className = "col";
-    div5.className = "col";
-    a.className = "btn btn-primary";
-    a.href = "EventViewer.html";
-
-
-    // Adding required assosiations to the elements
-    event.appendChild(div1);
-    event.appendChild(div2);
-    div2.appendChild(div3);
-    div2.appendChild(div4);
-    div2.appendChild(p);
-    div2.appendChild(div5);
-    div5.appendChild(a);
-
-    div3.appendChild(h4);
-    div4.appendChild(h6_1);
-    div5.appendChild(h6_2);
-
-    
-    document.getElementById("MainContainer").appendChild(event);
-
-    // document.write('        <div class="col Event-holder">');
-    // document.write('            <div1 class="img-holder"></div>');
-    // document.write('            <div2 class="text-holder">');
-    // document.write('                <div3 class="col"> <h4>Event Name</h4> </div>');
-    // document.write('                <div4 class="col"> <h6>Rating: 4.4 / 5</h6></div>');
-    // document.write('                <p>Event Description</p>');
-    // document.write('                <div5 class="col"> <h6>Dates: 2022-11-29 </h6></div>');
-    // document.write('                <a href="EventViewer.html" class="btn btn-primary">Learn More</a>');
-    // document.write('            </div>');
-    // document.write('        </div>');
-
-    */
-
-    let numEvents = localStorage.getItem("numEvents");
-
-    if (numEvents == null) 
-        numEvents = 0;
-    
-    numEvents = Number(numEvents);
-    console.log(numEvents);
-
-    localStorage.setItem("numEvents", numEvents + 1);
-
-    displayEvents();
-}
-
 function displayEvents() {
     let numEvents = localStorage.getItem("numEvents");
 
@@ -180,6 +131,7 @@ function displayEvents() {
     const categories = JSON.parse(localStorage.getItem("Categories"));
     const dates = JSON.parse(localStorage.getItem("Date and Times"));
 
+    // dynamically create html elements to display events from local storage
     for (i = 0; i < numEvents; i++) {
 
         const event = document.createElement("div");

@@ -8,6 +8,9 @@
     align-items: center;
 }
 
+.Event-holder {
+  padding-bottom: 15px;
+}
 
 .img-holder {
     width: 325px;
