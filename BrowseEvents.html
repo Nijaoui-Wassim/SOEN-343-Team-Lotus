@@ -15,7 +15,7 @@
     <script src="./js/create.js"></script>
 </head>
 
-<body>
+<body onload="displayEvents()">
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
         <div class="container"><a class="navbar-brand" href="./index.html" style="height: 41px;color: var(--bs-btn-hover-bg);font-weight: bold;font-family: Roboto;font-size: 24px;">LOTUS</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -58,10 +58,12 @@
         </div>
 
     </div>
-    <div class="row">
+
+    <!-- <div class="row">
         <button id="btn-design" type="submit" class="btn btn-success btn-lg mb-1 white" onclick=CreateEvent()>Test Create</button>
-    </div>
-    <div id="MainContainer" class="row paddingrow">
+    </div> -->
+
+    <div id="MainContainer" class="row paddingrow" >
         <!-- <div class="col Event-holder">
             <div class="img-holder"></div>
             <div class="text-holder">
@@ -137,8 +139,8 @@
     <div class="row paddingrow">
         <div class="pagination">
             <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a href="#" class="active">2</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
             <a href="#">3</a>
             <a href="#">4</a>
             <a href="#">5</a>
